@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: #222; }
+
+.container {
+    max-width: 1800px; /* Válaszd meg a kívánt maximális szélességet */
+    padding: 20px;
+    background-color: gray; /* Opcionális háttérszín a tartalomnak */
+  }

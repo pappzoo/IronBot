@@ -1,0 +1,57 @@
+<div class="container">
+  
+  <mat-tab-group dynamicHeight style="width: 1000px;">
+    <mat-tab label="Bemutatkozás">
+      <div class="example-small-box mat-elevation-z4">
+
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title-group>
+              <mat-card-title>iRobot</mat-card-title>
+              <mat-card-subtitle>kölcsönző</mat-card-subtitle>
+              <img mat-card-lg-image src="https://t4.ftcdn.net/jpg/02/10/96/95/240_F_210969565_cIHkcrIzRpWNZzq8eaQnYotG4pkHh0P9.jpg" >
+            </mat-card-title-group>
+          </mat-card-header>
+          <mat-card-content>
+            Itt lehetne egy bemutatkozó szöveg: <br/>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu suscipit lorem. Donec tincidunt iaculis dui, sed luctus turpis vulputate ut. Curabitur mi massa, placerat sed feugiat non, suscipit in mi. Nam malesuada lobortis odio, sed mattis nisl euismod ut. Donec semper nisi dapibus, luctus diam ac, efficitur arcu. Nam vel neque eros. Suspendisse et mi ac eros molestie ornare at sit amet ligula. Praesent viverra elit sollicitudin iaculis rhoncus. Vestibulum molestie, magna sed commodo vulputate, metus mi consectetur elit, a elementum enim risus a erat. Nulla ut felis dapibus, gravida metus vel, porta neque.
+            Aenean in erat ante. Aenean elit eros, porta sit amet tempor a, pharetra ac diam. Integer lacinia, massa scelerisque sollicitudin dignissim, erat ligula ullamcorper metus, nec lacinia magna urna id turpis. Cras porttitor, magna ut vestibulum ultricies, tellus ipsum elementum tortor, sed lacinia ligula leo non mauris. Curabitur ac accumsan augue. Nulla facilisi. Aliquam erat volutpat. Vestibulum mattis finibus enim. Mauris tortor magna, placerat nec fermentum sed, finibus quis nunc. Donec sit amet pharetra purus, non hendrerit mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+          </mat-card-content>
+        </mat-card>
+
+        <button mat-raised-button color="accent">{{buttonText}}</button>
+
+      </div>
+    </mat-tab>
+    <mat-tab label="Robotok">
+      <div class="example-large-box mat-elevation-z4">
+
+        <mat-form-field>
+          <mat-label>Robot kategória</mat-label>
+          <mat-select #select (selectionChange)="onCategorySelected(select.value)">
+            <mat-option *ngFor="let category of robotCategories" [value]="category.id">
+              {{category.category}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        
+        <table mat-table [dataSource]="robots" class="mat-elevation-z8">
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Név </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+
+</div>

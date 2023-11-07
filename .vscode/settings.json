@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/636da29c-ba50-4246-bc4a-e2c971ca65eb/resourceGroups/DefaultResourceGroup-EUS/providers/Microsoft.Web/sites/iRobot",
+    "appService.deploySubpath": "irobotservice"
+}
